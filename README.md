@@ -204,6 +204,6 @@ to run `unit tests` use the command `npm run test`
 
 *<a href="url"><img src="https://www.apsl.net/media/apslweb/images/postgresql-logo.width-900.png" align="middle" width="100" height="60"></a>`Employee Vaccination Inventory` is open source and therefore free to download and use without permission.*
 
-<a href="url"><img src="https://static.startuptalky.com/2021/02/Holberton-School-startuptalky.png" align="middle" width="220" height="100"></a>
+<a href="url"><img src="https://static.startuptalky.com/2021/02/Holberton-School-startuptalky.png" align="middle" width="440" height="200"></a>
 
 ---
