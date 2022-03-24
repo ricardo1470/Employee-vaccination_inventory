@@ -23,7 +23,7 @@
   * [Start Postgres Shell](#Start-Postgres-Shell)
   * [Create User Postrgres](#create-user-Postrgres)
   * [Set Password Postrgres](#Set-Password-Postrgres)
-  * [Solve Error: relation "users" does not exist](#solve-error:-relation-"users"-does-not-exist)
+  * [Solve Error: relation "users" does not exist](#Solve-Error:-relation-"users"-does-not-exist)
   * [Basic Postgres Commands](#Basic-Postgres-Commands)
 * [Test](#Test)
 * [Contact](#Contact)
@@ -139,7 +139,7 @@ describes any extra items you may need to use this project
 
 ---
 
-## solve error: relation "users" does not exist
+## Solve Error: relation "users" does not exist
 
 ---
 
