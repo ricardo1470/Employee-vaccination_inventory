@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-9 col-md-offset-2">
+            <table class="table table-bordered table-hober text-center">
+                <thead>
+                    <tr class="table-dark">
+                        <th scope="col">n°</th>
+                        <th scope="col">Cedula</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Apellido</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <br>
+                <tbody>
+                    <% if (data) { %>
+                        <% for(var i = 0; i < data.length; i++) { %>
+                        <tr class="table-dark">
+                            <td><%= (i + 1) %></td>
+                            <td><%= data[i].cedula %></td>
+                            <td><%= data[i].nombre %></td>
+                            <td><%= data[i].apellido %></td>
+                            <td><%= data[i].email %></td>
+                            <td>
+                                <a href="/api/info" class="btn btn-outline-success btn-sm">View</a>
+                                <a href="/api/data/user/<%= data[i].id %>" class="btn  btn-outline-info btn-sm">Edit</a>
+                                <a href="/api/data/delete/<%= data[i].id %>" class="btn btn-outline-danger btn-sm">Delete</a>
+                                <br>
+                            </td>
+                        </tr>
+                        <% } %>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-md-3 col-md-offset-2 mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/api/data/user" method="post">
+                        <div class="form-group">
+                            <label for="cedula">Cedula:</label>
+                            <input type="text" id="cedula" name="cedula" placeholder="Cedula" required class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="nombre">Nombre:</label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Nombre" required class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="apellido">Apellido:</label>
+                            <input type="text" id="apellido" name="apellido" placeholder="Apellido" required class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="text" id="email" name="email" placeholder="Email" required class="form-control">
+                        </div>
+                            <button type="submit" class="btn btn-outline-primary">Save User</button>
+                    </form>
+                </div>
+                <a href="/" type="submit" class="btn btn-outline-primary" >Home</a>
+            </div>
+        </div>
+    </div>
+</div>

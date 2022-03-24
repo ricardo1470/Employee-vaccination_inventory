@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-9 col-md-offset-2">
+            <table class="table table-bordered table-hober text-center">
+                <thead>
+                    <tr class="table-dark">
+                        <th scope="col">n°</th>
+                        <th scope="col">Fecha de Nacimiento</th>
+                        <th scope="col">Dirección de Domicilio</th>
+                        <th scope="col">Teléfono Móvil</th>
+                        <th scope="col">Estado de Vacunación </th>
+                    </tr>
+                </thead>
+                <br>
+                <tbody>
+                    <% if (data) { %>
+                        <% for(var i = 0; i < data.length; i++) { %>
+                        <tr class="table-dark">
+                            <td><%= (i + 1) %></td>
+                            <td><%= data[i].fecha_de_Nacimiento %></td>
+                            <td><%= data[i].dirección_de_domicilio %></td>
+                            <td><%= data[i].teléfono_móvil %></td>
+                            <td><%= data[i].estado_de_vacunación %></td>
+                            <td>
+                                <a href="/" class="btn btn-outline-success btn-sm">View</a>
+                                <a href="/<%= data[i].id %>" class="btn  btn-outline-info btn-sm">Edit</a>
+                                <br>
+                            </td>
+                        </tr>
+                        <% } %>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-md-3 col-md-offset-2 mt-4">
+            <div class="card">
+                <div class="card-body">
+                    <form action="/api/data/employees" method="post">
+                        <div class="form-group">
+                            <label for="Fecha de Nacimiento">Fecha de Nacimiento:</label>
+                            <input type="text" id="Fecha de Nacimiento" name="Fecha de Nacimiento" placeholder="Fecha de Nacimiento" required class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="dirección_de_domicilio">Dirección de Domicilio:</label>
+                            <input type="text" id="dirección_de_domicilio" name="dirección de domicilio" placeholder="Dirección de Domicilio" required class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="teléfono móvil">Teléfono Móvil:</label>
+                            <input type="text" id="teléfono_móvil" name="teléfono móvil" placeholder="Teléfono Móvil" required class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="estado de vacunación">Estado de Vacunación:</label>
+                            <input type="text" id="estado de vacunación" name="estado de vacunación" placeholder="Estado de Vacunación" required class="form-control">
+                        </div>
+                            <button type="submit" class="btn btn-outline-primary">Update Employee</button>
+                    </form>
+                </div>
+                <a href="/" type="submit" class="btn btn-outline-primary" >Home</a>
+            </div>
+        </div>
+    </div>
+</div>
