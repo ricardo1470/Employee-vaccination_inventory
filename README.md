@@ -140,9 +140,10 @@ describes any extra items you may need to use this project
 ---
 
 ## Solve Error:
-  * relation "users" does not exist
 
 ---
+
+* relation "users" does not exist
 
 * `GRANT ALL PRIVILEGES ON DATABASE <database name> TO postgres;`
 * `GRANT ALL PRIVILEGES ON DATABASE inventory TO postgres;`
