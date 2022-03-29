@@ -13,7 +13,7 @@ DROP table IF EXISTS admins;
 CREATE TABLE admins (
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     cedula INTEGER NOT NULL UNIQUE,
-    nombre TEXT NOT NULL,
+    nombre TEXT NOT NULL FOREING KEY REFERENCES users(nombre),
     apellido TEXT NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE);
 
@@ -37,7 +37,7 @@ CREATE TABLE users (
     fecha_de_nacimiento DATE NOT NULL,
     dirección_de_domicilio VARCHAR(100) NOT NULL,
     teléfono_móvil VARCHAR(50) NOT NULL UNIQUE,
-    estado_de_vacunación BOOLEAN NOT NULL);
+    estado_de_vacunación BOOLEAN NOT NULL DEFAULT FALSE FOREING KEY REFERENCES vacunas(estado_de_vacunación));
 
 -- list tables
 \dt
@@ -55,7 +55,7 @@ SELECT * FROM users;
 DROP table IF EXISTS vaccine;
 CREATE TABLE vaccine (
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    tipo_de_vacuna TEXT NOT NULL,
+    tipo_de_vacuna TEXT NOT NULL FOREING KEY REFERENCES users(tipo_de_vacuna),
     fecha_de_vacunación DATE NOT NULL,
     número_de_dosis INTEGER NOT NULL);
 
@@ -69,3 +69,8 @@ INSERT INTO vaccine (tipo_de_vacuna, fecha_de_vacunación, número_de_dosis) VAL
 
 -- view table
 SELECT * FROM vaccine;
+
+--inner join admin and user and vaccine
+SELECT * FROM admins
+    INNER JOIN users ON admins.cedula = users.cedula
+    INNER JOIN vaccine ON users.cedula = vaccine.cedula;
